@@ -12,7 +12,7 @@ const Share = () => {
       console.log("set pre-emptively");
       window.localStorage.setItem(
         IFRAME_LOADED_ORIGIN,
-        window.self.location.ancestorOrigins
+        window.self.location.ancestorOrigins[0]
       );
       console.log("set pre-emptively end");
     }
