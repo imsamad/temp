@@ -28,7 +28,8 @@ const Share = () => {
     if (!isRenderInIframe) return;
     const origin = localStorage.getItem(IFRAME_LOADED_ORIGIN);
     console.log("origin of iframe in localStorage ", origin);
-    if (origin) window.parent.postMessage("I m close", origin);
+    // if (origin)
+    window.parent.postMessage("I m close", origin);
     console.log(`origin was sent back`);
   };
   return (
