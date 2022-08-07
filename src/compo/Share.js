@@ -6,6 +6,7 @@ const Share = () => {
 
   useEffect(() => {
     console.log(`window.top `, window.top);
+    console.log(`window.top.0 `, window.top["0"]);
     console.log(`window.self `, window.self);
     if (isRenderInIframe) {
       console.log("set pre-emptively");
