@@ -10,7 +10,11 @@ const Share = () => {
     console.log(`window.self `, window.self);
     if (isRenderInIframe) {
       console.log("set pre-emptively");
-      window.localStorage(IFRAME_LOADED_ORIGIN, window.top.location.origin);
+      window.localStorage(
+        IFRAME_LOADED_ORIGIN,
+        window.self.location.ancestorOrigins
+      );
+      console.log("set pre-emptively end");
     }
     if (!isRenderInIframe) return;
     console.log(`iframeLoadedListener was called`);
