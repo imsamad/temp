@@ -7,6 +7,10 @@ const Share = () => {
   useEffect(() => {
     console.log(`window.top `, window.top);
     console.log(`window.self `, window.self);
+    if (isRenderInIframe) {
+      console.log("set pre-emptively");
+      window.localStorage(IFRAME_LOADED_ORIGIN, window.top.location.origin);
+    }
     if (!isRenderInIframe) return;
     console.log(`iframeLoadedListener was called`);
 
