@@ -5,6 +5,8 @@ const Share = () => {
   const isRenderInIframe = window.top != window.self;
 
   useEffect(() => {
+    console.log(`window.top `, window.top);
+    console.log(`window.self `, window.self);
     if (!isRenderInIframe) return;
     console.log(`iframeLoadedListener was called`);
 
