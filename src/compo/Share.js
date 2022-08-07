@@ -10,7 +10,7 @@ const Share = () => {
     console.log(`window.self `, window.self);
     if (isRenderInIframe) {
       console.log("set pre-emptively");
-      window.localStorage(
+      window.localStorage.setItem(
         IFRAME_LOADED_ORIGIN,
         window.self.location.ancestorOrigins
       );
